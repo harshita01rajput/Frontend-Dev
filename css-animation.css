@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f9fa;
+    color: #2c3e50;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  h1 {
+    margin-bottom: 50px;
+    color: #34495e;
+  }
+  
+  .animation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+  
+  /* Moving Box Animation */
+  .box {
+    width: 80px;
+    height: 80px;
+    background-color: #3498db;
+    border-radius: 10px;
+    animation: moveBox 3s ease-in-out infinite alternate;
+  }
+  
+  @keyframes moveBox {
+    0% {
+      transform: translateX(0);
+      background-color: #3498db;
+    }
+    50% {
+      transform: translateX(100px);
+      background-color: #9b59b6;
+    }
+    100% {
+      transform: translateX(0);
+      background-color: #1abc9c;
+    }
+  }
+  
+  /* Bouncing Ball Animation */
+  .ball {
+    width: 70px;
+    height: 70px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+    position: relative;
+    animation: bounceBall 2s ease-in-out infinite;
+  }
+  
+  @keyframes bounceBall {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-120px);
+    }
+  }
+  
+  /* Color Changing Text Animation */
+  .color-text {
+    font-size: 24px;
+    font-weight: bold;
+    animation: colorChange 4s ease-in-out infinite alternate;
+    animation-delay: 1s;
+  }
+  
+  @keyframes colorChange {
+    0% {
+      color: #2ecc71;
+    }
+    50% {
+      color: #f1c40f;
+    }
+    100% {
+      color: #e67e22;
+    }
+  }
+  
