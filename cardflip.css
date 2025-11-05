@@ -1,0 +1,17 @@
+/* q9.css — Card flip using preserve-3d and perspective */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial;background:#f4f7fb}
+body{display:flex;align-items:center;justify-content:center}
+.wrap{perspective:1000px}
+.card{
+  width:340px;height:260px;position:relative;transform-style:preserve-3d;transition:transform .7s;
+}
+.face{
+  position:absolute;inset:0;backface-visibility:hidden;border-radius:12px;overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1rem;background:#fff;box-shadow:0 12px 30px rgba(2,6,23,0.06)
+}
+.front img{width:100%;height:auto;border-radius:8px 8px 0 0}
+.back{transform:rotateY(180deg);background:#0b76d1;color:#fff;text-align:center;padding:1.5rem}
+
+/* flip on hover */
+.wrap:hover .card{transform:rotateY(180deg)}

@@ -1,0 +1,28 @@
+/* q4.css — Dashboard using CSS Grid */
+/* Header spans all columns, sidebar left, main grid with one box spanning two columns */
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,Arial;background:#f4f7fb}
+.dashboard{
+  display:grid;
+  grid-template-columns:240px 1fr 1fr;
+  grid-template-rows:auto 1fr;
+  gap:1rem;
+  grid-template-areas:
+    "hdr hdr hdr"
+    "sidebar main main";
+  padding:1rem;
+}
+.hdr{grid-area:hdr;background:#0b76d1;color:#fff;padding:1rem;border-radius:8px}
+.sidebar{grid-area:sidebar;background:#fff;padding:1rem;border-radius:8px;box-shadow:0 6px 18px rgba(2,6,23,0.04)}
+.sidebar nav a{display:block;padding:.6rem 0;color:#333;text-decoration:none}
+.main{grid-area:main;display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:140px;gap:1rem}
+.card{background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:scale(1.03);box-shadow:0 12px 30px rgba(2,6,23,0.12)}
+.card2{grid-column:span 2}
+
+/* responsive: stack to single column below 800px */
+@media (max-width:800px){
+  .dashboard{grid-template-columns:1fr;grid-template-areas:"hdr" "sidebar" "main"}
+  .main{grid-template-columns:1fr}
+  .card2{grid-column:auto}
+}

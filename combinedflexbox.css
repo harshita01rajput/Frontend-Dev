@@ -1,0 +1,25 @@
+/* q10.css — Combined Flexbox (header & inner) + Grid (main) */
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,Arial;display:flex;flex-direction:column;min-height:100vh;background:#f8fbff}
+.top{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:#0b76d1;color:#fff}
+.top .nav a{color:#fff;margin-left:1rem;text-decoration:none;font-weight:600}
+
+/* main grid: article + sidebar */
+.container{display:grid;grid-template-columns:2fr 1fr;gap:1rem;padding:1.5rem;flex:1}
+.article{background:#fff;padding:1rem;border-radius:10px}
+.sidebar{background:#fff;padding:1rem;border-radius:10px;align-self:start}
+
+/* inside article: three boxes with Flexbox */
+.flex-row{display:flex;gap:1rem;margin-top:1rem}
+.box{flex:1;background:#f2f7ff;padding:1rem;border-radius:8px;display:flex;align-items:center;justify-content:center}
+
+/* title animation */
+.animated-title{opacity:0;transform:translateY(12px);animation:titleIn .7s ease forwards .2s}
+@keyframes titleIn{to{opacity:1;transform:none}}
+
+/* responsive: single column on small screens */
+@media (max-width:800px){
+  .container{grid-template-columns:1fr;padding:1rem}
+  .flex-row{flex-direction:column}
+}
+.foot{text-align:center;padding:1rem;background:#eef6ff}

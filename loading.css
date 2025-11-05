@@ -1,0 +1,15 @@
+/* q7.css — Loading animation with three circles */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial}
+body{display:flex;align-items:center;justify-content:center;background:#f3f7fb}
+.loader{display:flex;gap:14px;align-items:flex-end;height:80px}
+.dot{width:16px;height:16px;border-radius:50%;background:#0b76d1;animation:jump .7s ease-in-out infinite}
+.d1{animation-delay:0s}
+.d2{animation-delay:.12s}
+.d3{animation-delay:.24s}
+
+@keyframes jump{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-26px)}
+  100%{transform:translateY(0)}
+}

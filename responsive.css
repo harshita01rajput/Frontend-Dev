@@ -1,0 +1,23 @@
+/* q6.css — Blog layout using grid-template-areas */
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,Arial;background:#f8fbff}
+.layout{
+  display:grid;gap:1rem;padding:1rem;min-height:100vh;
+  grid-template-columns:240px 1fr;
+  grid-template-rows:auto 1fr auto;
+  grid-template-areas:
+    "hdr hdr"
+    "sidebar main"
+    "ftr ftr";
+}
+.hdr{grid-area:hdr;background:#0b76d1;color:#fff;padding:1rem;border-radius:8px;display:flex;justify-content:space-between;align-items:center}
+.sidebar{grid-area:sidebar;background:#fff;padding:1rem;border-radius:8px}
+.main{grid-area:main;display:grid;grid-template-columns:1fr 1fr;gap:1rem;padding:0}
+.post{background:#fff;padding:1rem;border-radius:8px;min-height:160px}
+.ftr{grid-area:ftr;padding:1rem;text-align:center;background:#eaf3ff;border-radius:8px}
+
+/* below 800px: sidebar moves below main */
+@media (max-width:800px){
+  .layout{grid-template-columns:1fr;grid-template-areas:"hdr" "main" "sidebar" "ftr"}
+  .main{grid-template-columns:1fr}
+}

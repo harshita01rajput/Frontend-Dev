@@ -1,0 +1,26 @@
+/* q2.css */
+*{box-sizing:border-box}
+body{margin:0;font-family:inherit;padding:2rem;background:#fafafa}
+.title{text-align:center;margin:0 0 1rem}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1rem;
+}
+
+/* make cards equal height and centered content */
+.card{
+  background:white;border-radius:8px;padding:1rem;box-shadow:0 1px 4px rgba(0,0,0,.08);
+  display:flex;flex-direction:column;justify-content:space-between;min-height:140px;
+  transition:transform .3s ease;
+}
+.card:hover{transform:scale(1.05)}
+
+/* equalize heights regardless of content length handled by min-height + flex layout */
+
+.card h2{margin:0 0 .5rem;font-size:1rem}
+.price{margin:0;font-weight:700;color:#0b76d1}
+
+/* responsive: 2 columns for tablets, 1 for mobile */
+@media (max-width:900px){ .grid{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:500px){ .grid{grid-template-columns:1fr} }
